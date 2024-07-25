@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "username": "sam",
+      "passwordHash": "$2b$10$4MdgXjFIDnG4xZq6S9FBkOOb7umehSmIB47uyFdZPIoaL1fnVKaJe",
+      "color": "#013220"
+    },
+    {
+      "username": "tam",
+      "passwordHash": "$2b$10$P/TSc2Ra5vXiqG5KBr6EVucTQlCjF5cPslMKI4mnxUVvJq7VRlmhS",
+      "color": "#00008b"
+    }
+  ]
+}
