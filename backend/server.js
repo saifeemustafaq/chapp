@@ -74,8 +74,9 @@ io.on('connection', (socket) => {
     const user = users.find(u => u.username === socket.username);
     const newMessage = { 
       user: socket.username, 
-      text: message, // This will preserve multiline content
-      color: user.color
+      text: message,
+      color: user.color,
+      timestamp: new Date().toISOString() // Add this line
     };
     messages.push(newMessage);
     console.log('Broadcasting new message');

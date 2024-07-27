@@ -11,14 +11,17 @@
     elevation="2"
   >
     <v-card-text>
-      <v-chip
-        :color="message.color"
-        text-color="white"
-        size="small"
-        class="mb-2 font-weight-bold"
-      >
-        <span class="text-caption">{{ message.user }}</span>
-      </v-chip>
+      <div class="d-flex justify-space-between align-center mb-2">
+        <v-chip
+          :color="message.color"
+          text-color="white"
+          size="small"
+          class="font-weight-bold"
+        >
+          <span class="text-caption">{{ message.user }}</span>
+        </v-chip>
+        <span class="text-caption text-grey">{{ formatTimestamp(message.timestamp) }}</span>
+      </div>
       <div 
         style="color: black;"
         v-html="renderMarkdown(message.text)"
@@ -30,6 +33,7 @@
 <script>
 import { marked } from 'marked';
 import DOMPurify from 'dompurify';
+import { format, parseISO } from 'date-fns';
 
 export default {
   name: 'MessageItem',
@@ -54,8 +58,15 @@ export default {
       return DOMPurify.sanitize(rawHtml);
     };
 
+    const formatTimestamp = (timestamp) => {
+      if (!timestamp) return '';
+      const date = parseISO(timestamp);
+      return format(date, 'HH:mm:ss');
+    };
+
     return {
-      renderMarkdown
+      renderMarkdown,
+      formatTimestamp
     };
   }
 };

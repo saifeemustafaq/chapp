@@ -105,6 +105,7 @@ export default {
 
       socket.on("newMessage", (message) => {
         console.log("Received new message:", message);
+        // The message object should now include a timestamp from the server
         messages.value.push(message);
         scrollToBottom();
       });
