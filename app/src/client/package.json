@@ -1,0 +1,24 @@
+{
+  "name": "@chapp/client",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@mdi/font": "^7.4.47",
+    "axios": "^1.7.9",
+    "isomorphic-dompurify": "^2.20.0",
+    "marked": "^15.0.6",
+    "socket.io-client": "^4.7.4",
+    "vue": "^3.4.15",
+    "vuetify": "^3.5.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.3",
+    "vite": "^5.0.12"
+  }
+}

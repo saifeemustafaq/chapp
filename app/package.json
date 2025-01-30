@@ -1,0 +1,21 @@
+{
+  "name": "chapp",
+  "version": "1.0.0",
+  "description": "Chat application monorepo",
+  "private": true,
+  "workspaces": [
+    "src/client",
+    "src/server"
+  ],
+  "scripts": {
+    "dev:client": "cd src/client && npm run dev",
+    "dev:server": "cd src/server && npm run dev",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "build": "npm run build --workspace=src/client",
+    "start": "npm run start --workspace=src/server"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "concurrently": "^8.2.2"
+  }
+}
